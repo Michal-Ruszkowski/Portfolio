@@ -1,0 +1,13 @@
+<button class="button" (click)="toggleFilters()">{{ text }}</button>
+<section class="filters" *ngIf="isVisibleFilters">
+  <button class="button button--clicked" id="education" (click)="onClickButton($event)" [attr.data-type]="ExperienceType.Education">Education</button>
+  <button class="button button--clicked" id="courses" (click)="onClickButton($event)" [attr.data-type]="ExperienceType.Course">Courses</button>
+  <button class="button button--clicked" id="experience" (click)="onClickButton($event)" [attr.data-type]="ExperienceType.Experience">Experience</button>
+  <p class="sort">sort by 
+    <select class="sort__select" (change)="changeSort($event)">
+      <option class="sort__option">descending</option>
+      <option class="sort__option">ascending</option>
+    </select>
+  </p>
+</section>
+

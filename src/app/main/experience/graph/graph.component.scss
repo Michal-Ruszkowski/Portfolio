@@ -1,0 +1,183 @@
+@import 'src/styles/variables';
+
+.timeAxis {
+    margin: $size * 2 0;
+    height:max-content;
+    position:relative;
+    overflow: hidden;
+
+    @media (max-width:1200px) {
+      margin:40px 0
+    }
+  
+    .timeAxis__line {
+      position: absolute;
+      width: $size * .1;
+      left: 50%;
+      top:0;
+      transform: translateX(-50%);
+      background-color: $color-second;
+      height:100%;
+
+      @media (max-width:1200px) {
+        width:2px
+      }    
+
+      @media (max-width:600px) {
+        left:20px
+      }
+    }
+  
+    .timeAxis__list {
+      list-style: none;
+  
+      .timeAxis__item {
+          width: 30vw;
+          max-width:$size * 25;
+          padding:$size;
+          border-radius:$size * .7;
+          background-color: rgb($color-second, 80%);
+          clear: both;
+          margin-bottom:$size * 3;
+          position:relative;
+          opacity:0;
+
+          @media (max-width:1200px) {
+            width:calc(45vw - 20px);
+            max-width:500px;
+            padding:20px;
+            border-radius:14px;
+            margin-bottom:60px;
+          }
+
+          @media (max-width:600px) {
+            width:calc(90vw - 60px);
+            margin-left:40px !important;
+            margin-right:auto !important;
+            text-align: left !important;
+          }
+  
+          .timeAxis__text {
+              color: darken($color-third, 20%)
+          }
+
+          .timeAxis__text--date {
+            color:$color-main;
+            font-size: $size *.7;
+            font-weight:700;
+
+            @media (max-width:1200px) {
+              font-size: 14px
+            }
+          }
+
+          .timeAxis__text--subtitle {
+            color:darken($color-second,  40%);
+            font-size: $size * .7;
+
+            @media (max-width:1200px) {
+              font-size: 14px
+            }
+          }
+
+          .timeAxis__text--title {
+            font-size: $size * 1.4;
+            font-weight:900;
+
+            @media (max-width:1200px) {
+              font-size: 28px
+            }
+          }
+
+          .timeAxis__text--desc {
+            font-style: italic;
+            font-size: $size * 1.2;
+            font-weight: 300;
+
+            @media (max-width:1200px) {
+              font-size: 24px
+            }
+          }
+        }
+      
+        .timeAxis__item--odd {
+          margin-right:calc(45vw + $size );
+          margin-left:auto;
+          text-align: right;
+
+          @media (max-width:1200px) {
+            margin-right:calc(45vw + 20px );
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            width: $size * .5;
+            height: $size * .5;
+            border-radius: 50%;
+            background-color: $color-second;
+            position: absolute;
+            top: 0;
+            left: calc(100% + $size * .75);
+
+            @media (max-width:1200px) {
+              width: 10px;
+              height: 10px;
+              left: calc(100% + 15px);
+            }
+
+            @media (max-width:600px) {
+              right: calc(100% + 15px);
+              left:auto
+            }
+          }
+        }
+      
+        .timeAxis__item--even {
+          margin-left:calc(45vw + $size );
+          text-align: left;
+
+          @media (max-width:1200px) {
+            margin-left:calc(45vw + 20px );
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            width: $size * .5;
+            height: $size * .5;
+            border-radius: 50%;
+            background-color: $color-second;
+            position: absolute;
+            top: 0;
+            right: calc(100% + $size * .75);
+
+            @media (max-width:1200px) {
+              width: 10px;
+              height: 10px;
+              right: calc(100% + 15px);
+            }
+          }
+        }
+
+        .timeAxis__item--animated {
+          animation: fadeInGraph 1s ease forwards;
+        }
+
+        .timeAxis__item--visible {
+          opacity:1
+        }
+    }
+  }
+
+
+  @keyframes fadeInGraph {
+    0% {
+      opacity:0;
+      transform: translateY(80%);
+    }
+    100% {
+      opacity:1;
+      transform: translateY(0);
+    }
+  }

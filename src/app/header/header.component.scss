@@ -1,0 +1,111 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.header__ul {
+  list-style: none;
+  margin-right:$size;
+
+
+  @include flex;
+  justify-content: flex-end;
+
+  @media (max-width:600px) {
+    justify-content: space-around;
+    margin-right:0;
+    font-size: $size * .7;
+  }
+
+  .header__li {
+    width: $size * 6;
+    height: $size * 1.5;
+    text-align: center;
+    margin: $size * .25 $size * .5;
+    position: relative;
+    overflow: hidden;
+    border-radius: $size * .75;
+
+    @media (max-width:1200px) {
+      width: 120px;
+      height:30px;
+      margin: 5px 10px;
+      border-radius: 15px;
+    }
+  }
+
+  .header__link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: $size * 0.75;
+    line-height: $size * 1.2;
+    border-radius: $size * .75;
+    border: $size * .1 solid $color-third;
+    color: $color-third;
+
+    @media (max-width:1200px) {
+      font-size: 15px;
+      line-height: 24px;
+      border-radius: 15px;
+      border-width:2px
+    }
+
+    &:hover {
+      color:lighten($color: $color-third, $amount: 13%);
+      border-color:lighten($color: $color-third, $amount: 13%);
+      transition: all .4s ease-in-out;
+    }
+  }
+
+  .header__link--active {
+    border: $size * .1 solid lighten($color: $color-third, $amount: 13%);
+    color:lighten($color: $color-third, $amount: 13%);
+
+    @media (max-width:1200px) {
+      border-width:2px
+    }
+  }
+
+  .header__shadow {
+    position: absolute;
+   
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2;
+  }
+
+  .header__shadow--first {
+    top:0;
+    left: 0;
+  }
+
+  .header__shadow--second {
+    bottom:0;
+    left: -40%;
+    width:140%;
+    height:calc(100% - $size * .1);
+  }
+}
+
+@keyframes firstShadow {
+  80% {
+    transform:translateX(90%)
+  }
+  100% {
+    transform:translate(90%, 100%);
+    display:none
+  }
+  
+}
+
+@keyframes secondShadow {
+  80% {
+    transform:translateX(-90%)
+  }
+  100% {
+    transform:translate(-90%, -110%);
+    display:none
+  }
+}
+

@@ -1,0 +1,6 @@
+<section class="skills">
+    <figure class="skills__skill skills__skill--animated" *ngFor="let item of list">
+        <img class="skills__icon" [src]="item.img" [alt]="item.name" />
+        <figcaption class="skills__name">{{ item.name }}</figcaption>
+    </figure>
+</section>

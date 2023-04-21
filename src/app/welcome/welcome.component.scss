@@ -1,0 +1,41 @@
+@import "src/styles/variables";
+@import 'src/styles/mixins';
+
+.welcome {
+    min-height:100vh;
+    background-color:$color-main;
+    @include flex;
+    flex-direction:column;
+    @include absolute;
+    z-index:2
+}
+
+.welcome__canvas {
+    @include absolute
+}
+
+.welcome__text {
+    color:$color-second;
+    font-size:7vw;
+    line-height:2;
+    @include notSelected;
+    animation: showText 4s forwards;
+    // -webkit-animation-fill-mode: forwards;
+}
+
+.welcome__text--block {
+    display:block;
+}
+
+
+@keyframes showText {
+    0% {
+        opacity:0
+    }
+    50% {
+        opacity:1
+    }
+    100% {
+        opacity:0
+    }
+}

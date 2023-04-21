@@ -1,0 +1,77 @@
+@import 'src/styles/variables';
+
+.text {
+    font-size: 7vw;
+    font-weight: 900;
+    color:$color-second;
+    margin-top:1.7vw;
+
+    @media (max-width:600px) {
+        margin-top:50px;
+        margin-bottom:50px
+    }
+}
+
+.contact {
+    display:flex;
+    flex-direction: column;
+    margin-top:$size * 1.6;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+
+    .contact__link {
+        text-decoration: none;
+        color:$color-second;
+        font-size: $size * .8;
+        width:fit-content;
+        display:flex;
+        margin-top:$size * .3;
+
+        @media (max-width:1200px) {
+            font-size: 20px;
+            margin-top:10px;
+        }
+    
+        &:hover {
+            color:$color-third
+        }
+
+        .contact__icon {
+            width:$size ;
+            height:$size;
+            margin-right:$size * 0.5;
+            color:$color-second;
+            font-size: $size;
+
+            @media (max-width:1200px) {
+                width:25px;
+                height:25px;
+                margin-right:10px;
+                font-size: 20px;
+            }
+        }
+        
+        .contact__icon--linkedin {
+            background-image: url('../../../assets/linked.png');
+            background-position: center;
+            background-size: cover;
+            transform: scale(80%);
+        }
+
+        .contact__icon--github {
+            background-image: url('../../../assets/github.png');
+            background-position: center;
+            background-size: cover;
+            border-radius:50%;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+}
+
+.contact--animated {
+    animation: fadeIn 2s 1.5s forwards;
+}

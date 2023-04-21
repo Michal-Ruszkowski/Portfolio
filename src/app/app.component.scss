@@ -1,0 +1,27 @@
+@import 'src/styles/variables';
+
+.wrapper {
+    width:100vw;
+    min-height:100vh;
+    overflow-x: hidden;
+    position:absolute;
+  }
+  
+  .bg {
+    width:130vw;
+    height:130vh;
+    margin: -15vh -15vw;
+    background-image: url('../assets/bg.jpg');
+    background-size:cover;
+    transition: transform 0.2s ease-out;
+    position:fixed
+  }
+
+  .content {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    min-height:100vh;
+    background-color: rgb($color-main, 0.6);
+  }  

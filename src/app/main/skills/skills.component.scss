@@ -1,0 +1,62 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.skills {
+    list-style: none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+
+    .skills__skill {
+        width:15vw;
+        height:15vw;
+        margin:2vw;
+        border-radius:50%;
+        background: $color-second;
+        background: radial-gradient(circle, $color-second 50%, $color-third 100%);
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transform:translateX(100vw);
+        animation:fadeInSkills 1.5s ease-out forwards;
+        
+        @media (max-width:900px) {
+            width:25vw;
+            height:25vw;
+        }
+
+        @media (max-width:600px) {
+            width:35vw;
+            height:35vw;
+        }
+
+        .skills__icon {
+            width:50%
+        }
+
+        .skills__name {
+            font-size: $size * .7;
+
+            @media (max-width:1200px) {
+                font-size: 18px;
+            }
+    
+  
+            @media (max-width:600px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@keyframes fadeInSkills {
+    0% {
+        transform:translateX(100vw)
+        rotate(720deg)
+    }
+    100% {
+        transform: translateX(0)
+        rotate(0deg)
+    }
+}

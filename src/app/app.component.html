@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <app-welcome *ngIf="canShowWelcomeComponent" (welcomeCompleted)="onWelcomeCompleted()"></app-welcome>
+    <app-popup *ngIf="showPopup"></app-popup>
+    <div class='bg' #bg></div>
+    <div class='content' *ngIf="!canShowWelcomeComponent">
+        <app-header></app-header>
+        <app-main></app-main>
+        <app-footer></app-footer>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<section class="timeAxis">
+  <div class="timeAxis__line"></div>
+  <ul class="timeAxis__list" >
+    <li class="timeAxis__item" *ngFor="let experience of experiences$ | async; let i = index"
+        [class.timeAxis__item--odd]="i % 2 === 0"
+        [class.timeAxis__item--even]="i % 2 !== 0"
+         #timeAxisItem>
+      <span class="timeAxis__text timeAxis__text--date">{{ experience.date }}</span>
+      <p class="timeAxis__text timeAxis__text--subtitle">{{ experience.subtitle }}</p>
+      <p class="timeAxis__text timeAxis__text--title">{{ experience.title }}</p>
+      <p class="timeAxis__text timeAxis__text--desc">{{ experience.description }}</p>
+    </li>
+  </ul>
+</section>
