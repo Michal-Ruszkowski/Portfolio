@@ -1,4 +1,4 @@
-LIVE - https://michal-ruszkowski.github.io/Portfolio-Angular
+LIVE - https://michal-ruszkowski.github.io/Portfolio
 
 
 
