@@ -1,0 +1,17 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.portfolio {
+    @include section;
+    background-color:rgba($color-second, 0);
+
+    .portfolio__title {
+        @include title;
+    }
+
+    .portfolio__projects {
+        @include flex;
+        flex-wrap:wrap;
+        padding:$size 0;
+    }
+}

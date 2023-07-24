@@ -1,0 +1,160 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.contact {
+    @include section;
+    background-color:rgba($color-second, 0);
+    text-align: center;
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        margin:20vh 0 15vh;
+        font-size: $size;
+        color:$color-main;
+
+        @media screen and (max-width:1280px) {
+            font-size: $size * 1.4;
+        }
+
+        @media screen and (max-width:768px) {
+            font-size: $size * 1.6;
+        }
+
+        @media screen and (max-width:600px) {
+            font-size: 20px;
+        }
+
+        .contact__email {
+            color:darken($color-third, 0%);
+            letter-spacing:2px;
+            font-weight:900
+
+        }
+    }
+
+    &__buttons {
+        @include flex;
+        flex-wrap:wrap;
+
+        .contact__button {
+            transition: all .5s ease-in-out ;
+            -webkit-transition: all .5s ease-in-out ;
+            -moz-transition: all .5s ease-in-out ;
+            -ms-transition: all .5s ease-in-out ;
+            -o-transition: all .5s ease-in-out ;
+            color:$color-main;
+            text-decoration: none;
+            margin:10vh 15vw;
+            padding:$size * .5 $size;
+            background-color: $color-second;
+            border-radius:$size;
+            -webkit-border-radius:$size;
+            -moz-border-radius:$size;
+            -ms-border-radius:$size;
+            -o-border-radius:$size;
+            font-size: $size * .7;
+            font-weight:700;
+            letter-spacing:3px;
+            @include flex;
+            border:1px solid $color-main;
+            opacity: 0;
+
+            @media screen and (max-width:1280px) {
+                font-size: $size ;
+                border-radius: $size * 1.5            ;
+                -webkit-border-radius: $size * 1.5            ;
+                -moz-border-radius: $size * 1.5            ;
+                -ms-border-radius: $size * 1.5            ;
+                -o-border-radius: $size * 1.5            ;
+            }
+
+            @media screen and (max-width:1080px) {
+                font-size: $size * 1.2;
+                padding:$size $size *2;
+                border-radius:$size * 2            ;
+                -webkit-border-radius:$size * 2            ;
+                -moz-border-radius:$size * 2            ;
+                -ms-border-radius:$size * 2            ;
+                -o-border-radius:$size * 2            ;
+                margin:2vh 15vw;
+                min-width:30vw
+            }
+
+            @media screen and (max-width:768px) {
+                font-size: $size * 1.6;
+            }
+
+            @media screen and (max-width:600px) {
+                font-size: 20px;
+                border-radius: 40px            ;
+                -webkit-border-radius: 40px            ;
+                -moz-border-radius: 40px            ;
+                -ms-border-radius: 40px            ;
+                -o-border-radius: 40px            ;
+                padding: 15px 40px;
+                min-width:50vw;
+            }
+
+            @media screen and (max-width:400px) {
+                padding: 15px 30px;
+                min-width:60vw;
+            }
+
+            &:hover {
+                background-color:$color-third;
+                color:$color-main;
+                border-color:$color-third
+            }
+
+            .contact__icon {
+                width:$size * .7;
+                height: $size * .7;
+                font-size: $size * .9;
+                background-position: center;
+                background-size: cover;
+                display:inline-block;
+                margin-right:$size * .4;
+
+                @media screen and (max-width:1080px) {
+                    width:$size;
+                    height:$size;
+                    font-size: $size * 1.4;
+                }
+
+                @media screen and (max-width:768px) {
+                    width:$size * 1.4;
+                    height:$size * 1.4;
+                    font-size: $size * 1.8;
+                }
+
+                @media screen and (max-width:600px) {
+                    width:20px;
+                    height:20px;
+                    font-size: 24px;
+                }
+            }
+
+            .contact__icon--linkedin {
+                background-image: url('../../../assets/linkedin.png');
+            }
+
+            .contact__icon--github {
+                background-image: url('../../../assets/github.png');
+            }
+        }
+
+        .contact__button--black {
+            background-color: $color-main;
+            color:$color-third;
+            border:none;
+
+            &:hover {
+                background-color: $color-third;
+                color:$color-main
+            }
+        }
+    }
+}

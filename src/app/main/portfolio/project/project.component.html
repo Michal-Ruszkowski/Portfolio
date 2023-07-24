@@ -1,0 +1,15 @@
+<div class="project">
+    <a class="project__left" [href]="project.urlToLive" target="_blank">
+        <img class="project__img" [src]="project.imgSrc" [alt]="project.name">
+    </a>
+    <div class="project__right">
+        <p class="project__name">{{ project.name }}</p>
+        <div class="project__technologies">
+            <span class="project__technology" *ngFor="let item of project.technologies">{{ item }}</span>
+        </div>
+        <div class="project__buttons">
+            <a class="project__button" [href]="project.urlToLive" target="_blank">LIVE</a>
+            <a class="project__button" *ngIf='project.urlToCode' [href]="project.urlToCode" target="_blank">CODE</a>
+        </div>
+    </div>    
+</div>
