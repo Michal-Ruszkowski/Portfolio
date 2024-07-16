@@ -10,8 +10,8 @@
         <div class="project__buttons">
             <a class="project__button" *ngIf='project.urlToLive' [href]="project.urlToLive" target="_blank">LIVE</a>
             <a class="project__button" *ngIf='project.urlToCode' [href]="project.urlToCode" target="_blank">CODE</a>
-            <a class="project__button" *ngIf='project.urlToGooglePlay' [href]="project.urlToGooglePlay" target="_blank">Google Play</a>
-            <a class="project__button" *ngIf='project.urlToAppleStore' [href]="project.urlToAppleStore" target="_blank">Apple Store</a>
+            <a class="project__button project__button--longText" *ngIf='project.urlToGooglePlay' [href]="project.urlToGooglePlay" target="_blank">Google Play</a>
+            <a class="project__button project__button--longText" *ngIf='project.urlToAppleStore' [href]="project.urlToAppleStore" target="_blank">Apple Store</a>
         </div>
     </div>    
 </div>

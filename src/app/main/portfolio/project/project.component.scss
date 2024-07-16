@@ -2,8 +2,8 @@
 @import 'src/styles/variables';
 
 .project {
-    width:30vw;
-    height:10vw;
+    width:40vw;
+    height:12vw;
     overflow: hidden;
     background-color: $color-main;
     border-radius:$size * .6;
@@ -39,15 +39,23 @@
         -moz-border-radius:$size ;
         -ms-border-radius:$size ;
         -o-border-radius:$size ;
-}
+    }
+
+    @media screen and (max-width:330px) {
+        height:40vw
+    }
 
     .project__left {
-        width:40%;
+        width:30%;
         height:100%;
         background-color: darken($color-second, 30%);
         background-color:$color-main;
         overflow: hidden;
         text-align: center;
+
+        @media screen and (max-width:500px) {
+            width:25%
+        }
 
         .project__img {
             width:auto;
@@ -70,15 +78,19 @@
     }  
 
     .project__right {
-        width:60%;
+        width:70%;
         height:100%;
-        padding: $size * .5;
+        padding: $size * .75;
         display:flex;
         justify-content: space-between;
         flex-direction: column;
 
         @media screen and (max-width:1080px) {
-            padding: $size;
+            padding: $size * 1.5;
+        }
+
+        @media screen and (max-width:500px) {
+            width:75%
         }
 
         .project__name {
@@ -144,6 +156,7 @@
         .project__buttons {
             display:flex;
             justify-content: space-between;
+            flex-wrap:wrap;
 
             .project__button {
                 display:block;
@@ -176,21 +189,38 @@
                     -o-border-radius:$size * .8;
                 }
 
+                @media screen and (max-width:1080px) {
+                    padding:$size * .4 $size ;
+                    border-radius:$size;
+                    -webkit-border-radius:$size;
+                    -moz-border-radius:$size;
+                    -ms-border-radius:$size;
+                    -o-border-radius:$size;
+}
+
                 @media screen and (max-width:768px) {
-                    border-radius: $size * 1.4;
-                    -webkit-border-radius: $size * 1.4;
-                    -moz-border-radius: $size * 1.4;
-                    -ms-border-radius: $size * 1.4;
-                    -o-border-radius: $size * 1.4;
-                }
+                    border-radius: $size * 1.8;
+                    -webkit-border-radius: $size * 1.8;
+                    -moz-border-radius: $size * 1.8;
+                    -ms-border-radius: $size * 1.8;
+                    -o-border-radius: $size * 1.8;
+}
 
                 @media screen and (max-width:500px) {
-                    border-radius: $size * 2                ;
-                    -webkit-border-radius: $size * 2                ;
-                    -moz-border-radius: $size * 2                ;
-                    -ms-border-radius: $size * 2                ;
-                    -o-border-radius: $size * 2                ;
+                    border-radius: $size * 2.4                ;
+                    -webkit-border-radius: $size * 2.4                ;
+                    -moz-border-radius: $size * 2.4                ;
+                    -ms-border-radius: $size * 2.4                ;
+                    -o-border-radius: $size * 2.4                ;
 }
+            }
+            .project__button--longText {
+                letter-spacing: normal;
+
+                @media screen and (max-width:330px) {
+                    margin-top:$size * 2;
+                    margin-right:$size
+                }
             }
         }
 
