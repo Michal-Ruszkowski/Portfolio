@@ -9,11 +9,17 @@ import gsap from 'gsap';
 export class PortfolioComponent implements OnInit {
   projects = [
     {
-      name: 'Beer App',
-      imgSrc: '../../../assets/beer.png',
-      urlToLive: 'https://michal-ruszkowski.github.io/Beers-Angular',
-      urlToCode: 'https://github.com/Michal-Ruszkowski/Beers-Angular',
-      technologies: ['Angular', 'TypeScript', 'SCSS', 'HTML']
+      name: 'List',
+      imgSrc: '../../../assets/list.png',
+      urlToGooglePlay: 'https://play.google.com/store/apps/details?id=com.michrusz.list',
+      technologies: ['React Native']
+    },
+    {
+      name: 'Email HTML',
+      imgSrc: '../../../assets/email_html.png',
+      urlToLive: 'https://michal-ruszkowski.github.io/Email_HTML/',
+      urlToCode: 'https://github.com/Michal-Ruszkowski/Email_HTML',
+      technologies: ['HTML', 'CSS']
     },
     {
       name: 'Advertising banner',
@@ -28,13 +34,6 @@ export class PortfolioComponent implements OnInit {
       urlToLive: 'https://michal-ruszkowski.github.io/Landing_page/',
       urlToCode: 'https://github.com/Michal-Ruszkowski/Landing_page',
       technologies: ['JavaScript', 'HTML', 'SCSS', 'BEM']
-    },
-    {
-      name: 'mk-szkolenia',
-      imgSrc: '../../../assets/mk.png',
-      urlToLive: 'https://mk-szkolenia.pl',
-      urlToCode: '',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'BEM']
     },
     {
       name: 'Recommendation frame',
@@ -56,20 +55,6 @@ export class PortfolioComponent implements OnInit {
       urlToLive: 'https://michal-ruszkowski.github.io/Catch_the_mosquitoes_GAME/',
       urlToCode: 'https://github.com/Michal-Ruszkowski/Catch_the_mosquitoes_GAME',
       technologies: ['JavaScript', 'HTML', 'SCSS']
-    },
-    {
-      name: 'Animated balls on scroll',
-      imgSrc: '../../../assets/balls.png',
-      urlToLive: 'https://michal-ruszkowski.github.io/Animated-balls-on-scroll/',
-      urlToCode: 'https://github.com/Michal-Ruszkowski/Animated-balls-on-scroll',
-      technologies: ['JavaScript', 'HTML', 'SCSS']
-    },
-    {
-      name: 'Game - custom chess',
-      imgSrc: '../../../assets/chess.png',
-      urlToLive: 'https://michal-ruszkowski.github.io/custom_chess_game/',
-      urlToCode: 'https://github.com/Michal-Ruszkowski/custom_chess_game',
-      technologies: ['JavaScript', 'HTML', 'CSS']
     },
   ]
 
