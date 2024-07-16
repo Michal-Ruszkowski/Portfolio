@@ -9,6 +9,14 @@ import gsap from 'gsap';
 export class SkillsComponent implements OnInit{
   skills = [
     {
+      name: 'React  Native',
+      img: '../../../assets/react-native.svg'
+    },
+    {
+      name: 'React',
+      img: '../../../assets/React.png'
+    },
+    {
       name: 'Angular',
       img: '../../../assets/angular.png'
     },
@@ -33,6 +41,10 @@ export class SkillsComponent implements OnInit{
       img: '../../../assets/scss.png'
     },
     {
+      name: 'Tailwind',
+      img: '../../../assets/tailwind.png'
+    },
+    {
       name: 'Node.js',
       img: '../../../assets/node.png'
     },
@@ -47,6 +59,10 @@ export class SkillsComponent implements OnInit{
     {
       name: 'Email HTML',
       img: '../../../assets/email.png'
+    },
+    {
+      name: 'Maizzle',
+      img: '../../../assets/maizzle.png'
     },
     {
       name: 'Git',
