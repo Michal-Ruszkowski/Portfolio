@@ -9,10 +9,16 @@ import gsap from 'gsap';
 export class PortfolioComponent implements OnInit {
   projects = [
     {
+      name: 'FairCosts - group expense calculator',
+      imgSrc: '../../../assets/faircosts.png',
+      urlToGooglePlay: 'https://play.google.com/store/apps/details?id=com.michrusz.FairCosts',
+      technologies: ['React Native', 'Expo Go']
+    },
+    {
       name: 'List',
       imgSrc: '../../../assets/list.png',
       urlToGooglePlay: 'https://play.google.com/store/apps/details?id=com.michrusz.list',
-      technologies: ['React Native']
+      technologies: ['React Native', 'Expo Go']
     },
     {
       name: 'Email HTML',
