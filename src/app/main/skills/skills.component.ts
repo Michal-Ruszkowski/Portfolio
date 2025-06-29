@@ -95,7 +95,9 @@ export class SkillsComponent implements OnInit{
     });
 
     const skillsElement = this.elementRef.nativeElement.querySelector('.skills__list');
-    observer.observe(skillsElement);
+    if (skillsElement) {
+      observer.observe(skillsElement);
+    }
   }
 
   startAnimate(): void {
@@ -106,15 +108,16 @@ export class SkillsComponent implements OnInit{
     .from('.skills__title', {
       duration:.3,
       y: '-=15vw',
+      opacity: 1,
       delay: .5,
     })
     .to('.skills', {
       duration: 2,
       backgroundColor: 'rgba(0, 0, 0, 0.9)'
     }, '-=.8')
-    .from('.skill', {
+    .to('.skill', {
       duration: 0.5,
-      opacity: 0,
+      opacity: 1,
       y: '-=20px',
       stagger: 0.15 
     }, '-=1');

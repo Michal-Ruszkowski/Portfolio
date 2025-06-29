@@ -9,6 +9,13 @@ import gsap from 'gsap';
 export class PortfolioComponent implements OnInit {
   projects = [
     {
+      name: 'CheckPointRace - Travel Game',
+      imgSrc: '../../../assets/faircosts.png',
+      urlToGooglePlay: 'https://play.google.com/store/apps/details?id=com.michrusz.CheckPointRace',
+      urlToAppStore: 'https://apps.apple.com/us/app/checkpointrace-travel-game/id6745142337',
+      technologies: ['React Native', 'Expo Go']
+    },
+    {
       name: 'FairCosts - group expense calculator',
       imgSrc: '../../../assets/faircosts.png',
       urlToGooglePlay: 'https://play.google.com/store/apps/details?id=com.michrusz.FairCosts',

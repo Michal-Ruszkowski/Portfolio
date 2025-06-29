@@ -2,17 +2,97 @@
 @import 'src/styles/variables';
 
 .skills {
-    @include section;
-    background-color: rgba($color-second, 0);
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3), transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(119, 198, 255, 0.3), transparent 50%),
+    linear-gradient(135deg, #0a0a0f 0%, #1a1625 50%, #0f0f23 100%);
+  color: #ffffff;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
 
-    &__title {
-        @include title;
-        color:$color-second;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, #ffffff08 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, #ffffff05 1px, transparent 1px);
+    background-size: 60px 60px, 40px 40px;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+  }
 
-    &__list {
-        @include flex;
-        flex-wrap:wrap;
-        margin-top:15vh;
-    }
+  &__title {
+  @include title;
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #ffffff, #a855f7, #06b6d4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+    position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #ffffff, #a855f7, #06b6d4);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+    filter: blur(20px);
+    opacity: 0.3;
+    z-index: -1;
+  }
+}
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills__list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
 }

@@ -29,16 +29,10 @@ export class ProjectComponent implements OnInit{
   startAnimate(element: Element) {
     const leftSide = element.querySelector('.project__left')
     const rightSide = element.querySelector('.project__right')
-    const direction = +(this.index % 2 === 0) ? '-=100vw' : '+=100vw'
 
     gsap.timeline()
       .set(element, {
         visibility: 'visible'
-      })
-      .from(element, {
-        duration: .6,
-        delay: .2,
-        x: direction,
       })
       .from(leftSide, {
         duration: .5,

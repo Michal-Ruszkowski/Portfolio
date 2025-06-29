@@ -1,14 +1,110 @@
 @import 'src/styles/variables';
 
 .footer {
-    background-color: $color-main;
-    padding: $size * .5;
-    text-align: center;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1625 50%, #0f0f23 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 30% 70%, #ffffff03 1px, transparent 1px),
+      radial-gradient(circle at 70% 30%, #a855f705 1px, transparent 1px);
+    background-size: 80px 80px, 60px 60px;
+    animation: gentle-float 30s ease-in-out infinite;
+    pointer-events: none;
+  }
 
-    .footer__text {
-        color:$color-second;
-        font-size: 12px;
-        font-weight:700;
-        letter-spacing:2px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+    animation: glow-line 3s ease-in-out infinite;
+  }
+
+  &__text {
+    color: #e2e8f0;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    
+    background: linear-gradient(135deg, #e2e8f0, #a855f7, #e2e8f0);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: subtle-gradient 6s ease-in-out infinite;
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-1px);
     }
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(180deg);
+  }
+}
+
+@keyframes glow-line {
+  0%, 100% {
+    opacity: 0.3;
+    width: 200px;
+  }
+  50% {
+    opacity: 0.7;
+    width: 300px;
+  }
+}
+
+@keyframes subtle-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+    
+    &__text {
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+    
+    &__text {
+      font-size: 0.75rem;
+    }
+  }
 }

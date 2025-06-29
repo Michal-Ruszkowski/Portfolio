@@ -2,228 +2,91 @@
 @import 'src/styles/variables';
 
 .project {
-    width:40vw;
-    height:12vw;
-    overflow: hidden;
-    background-color: $color-main;
-    border-radius:$size * .6;
-    -webkit-border-radius:$size * .6;
-    -moz-border-radius:$size * .6;
-    -ms-border-radius:$size * .6;
-    -o-border-radius:$size * .6;
-    margin:$size;
-    @include flex;
-    visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #1f1f2e;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
 
-    &:hover {
-        -webkit-box-shadow: 0px 0px 14px 7px $color-second;
-        -moz-box-shadow: 0px 0px 14px 7px $color-second;
-        box-shadow: 0px 0px 14px 7px $color-second;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .project__left {
+    width: 100%;
+    height: 180px;
+    background-color: #000;
+
+    .project__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .project__right {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .project__name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $color-second;
     }
 
-    @media screen and (max-width:1280px) {
-        width:40vw;
-        height:13vw;
+    .project__technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .project__technology {
+        background: #31324b;
+        padding: 0.3rem 0.7rem;
+        font-size: 0.75rem;
+        border-radius: 0.5rem;
+        color: #ccc;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
     }
 
-    @media screen and (max-width:1080px) {
-        width:80vw;
-        height:27vw;
+    .project__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: auto;
+
+      .project__button {
+        background: $color-third;
+        color: $color-main;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $color-second;
+        }
+      }
+
+      .project__button--longText {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+      }
     }
-
-    @media screen and (max-width:500px) {
-        width:90vw;
-        height:30vw;
-        border-radius:$size ;
-        -webkit-border-radius:$size ;
-        -moz-border-radius:$size ;
-        -ms-border-radius:$size ;
-        -o-border-radius:$size ;
-    }
-
-    @media screen and (max-width:330px) {
-        height:40vw
-    }
-
-    .project__left {
-        width:30%;
-        height:100%;
-        background-color: darken($color-second, 30%);
-        background-color:$color-main;
-        overflow: hidden;
-        text-align: center;
-
-        @media screen and (max-width:500px) {
-            width:25%
-        }
-
-        .project__img {
-            width:auto;
-            max-width:100%;
-            height:100%;
-            object-fit: contain;
-            transition: transform .3s ease-in-out;
-            -webkit-transition: transform .3s ease-in-out;
-            -moz-transition: transform .3s ease-in-out;
-            -ms-transition: transform .3s ease-in-out;
-            -o-transition: transform .3s ease-in-out;
-            &:hover {
-                transform:scale(1.2)            ;
-                -webkit-transform:scale(1.2)            ;
-                -moz-transform:scale(1.2)            ;
-                -ms-transform:scale(1.2)            ;
-                -o-transform:scale(1.2)            ;
-            }
-        }
-    }  
-
-    .project__right {
-        width:70%;
-        height:100%;
-        padding: $size * .75;
-        display:flex;
-        justify-content: space-between;
-        flex-direction: column;
-
-        @media screen and (max-width:1080px) {
-            padding: $size * 1.5;
-        }
-
-        @media screen and (max-width:500px) {
-            width:75%
-        }
-
-        .project__name {
-            font-weight:700;
-            font-size: $size * .8;
-            color:$color-second;
-
-            @media screen and (max-width:1280px) {
-                font-size: $size;
-            }
-
-            @media screen and (max-width:1080px) {
-                font-size: $size * 2;
-            }
-
-            @media screen and (max-width:500px) {
-                font-size: $size * 2.5;
-            }
-        }
-
-        .project__technologies {
-            @media screen and (max-width:600px) {
-                display:flex;
-                flex-wrap:wrap;
-            }
-
-            .project__technology {
-                margin-right:$size * .2;
-                padding:$size * .1 $size * .2;
-                background-color: antiquewhite;
-                font-size: $size * .4;
-                border-radius:$size * .3;
-                -webkit-border-radius:$size * .3;
-                -moz-border-radius:$size * .3;
-                -ms-border-radius:$size * .3;
-                -o-border-radius:$size * .3;
-    
-                @media screen and (max-width:1280px) {
-                    font-size: $size * .6;
-                    margin-right:$size * .5;
-                }
-    
-                @media screen and (max-width:1080px) {
-                    font-size: $size;
-                }
-    
-                @media screen and (max-width:768px) {
-                    font-size: $size * 1.2;
-                    padding:$size * .2 $size * .4;
-                }
-
-                @media screen and (max-width:600px) {
-                    margin-top:$size;
-                }
-    
-                @media screen and (max-width:460px) {
-                    font-size: $size * 1.5;
-                    padding:$size * .2 $size * .4;
-                }
-            }
-        }
-
-        .project__buttons {
-            display:flex;
-            justify-content: space-between;
-            flex-wrap:wrap;
-
-            .project__button {
-                display:block;
-                padding:$size * .2 $size *.8;
-                background-color: $color-third;
-                color:$color-main;
-                font-weight:900;
-                letter-spacing:2px;
-                text-decoration:none;
-                border-radius:$size * .4                    ;
-                -webkit-border-radius:$size * .4                    ;
-                -moz-border-radius:$size * .4                    ;
-                -ms-border-radius:$size * .4                    ;
-                -o-border-radius:$size * .4                    ;
-                transition:all .4s ease-in-out;
-                -webkit-transition:all .4s ease-in-out;
-                -moz-transition:all .4s ease-in-out;
-                -ms-transition:all .4s ease-in-out;
-                -o-transition:all .4s ease-in-out;
-
-                &:hover {
-                    background-color: $color-second;
-                }
-
-                @media screen and (max-width:1440px) {
-                    border-radius:$size * .8;
-                    -webkit-border-radius:$size * .8;
-                    -moz-border-radius:$size * .8;
-                    -ms-border-radius:$size * .8;
-                    -o-border-radius:$size * .8;
-                }
-
-                @media screen and (max-width:1080px) {
-                    padding:$size * .4 $size ;
-                    border-radius:$size;
-                    -webkit-border-radius:$size;
-                    -moz-border-radius:$size;
-                    -ms-border-radius:$size;
-                    -o-border-radius:$size;
-}
-
-                @media screen and (max-width:768px) {
-                    border-radius: $size * 1.8;
-                    -webkit-border-radius: $size * 1.8;
-                    -moz-border-radius: $size * 1.8;
-                    -ms-border-radius: $size * 1.8;
-                    -o-border-radius: $size * 1.8;
-}
-
-                @media screen and (max-width:500px) {
-                    border-radius: $size * 2.4                ;
-                    -webkit-border-radius: $size * 2.4                ;
-                    -moz-border-radius: $size * 2.4                ;
-                    -ms-border-radius: $size * 2.4                ;
-                    -o-border-radius: $size * 2.4                ;
-}
-            }
-            .project__button--longText {
-                letter-spacing: normal;
-
-                @media screen and (max-width:330px) {
-                    margin-top:$size * 2;
-                    margin-right:$size
-                }
-            }
-        }
-
-        
-    }
+  }
 }
